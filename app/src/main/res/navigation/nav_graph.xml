@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/overviewFragment">
+
+    <fragment android:id="@+id/overviewFragment"
+              android:name="com.riluq.seafood.overview.OverviewFragment"
+              android:label="Seafood"
+              tools:layout="@layout/fragment_overview">
+        <action
+                android:id="@+id/action_overviewFragment_to_detailFragment"
+                app:destination="@id/detailFragment" app:enterAnim="@anim/slide_in_right"
+                app:popEnterAnim="@anim/slide_in_right"/>
+        <action android:id="@+id/action_overviewFragment_to_barcodeScannerFragment"
+                app:destination="@id/barcodeScannerFragment" app:enterAnim="@anim/slide_in_right"
+                app:popEnterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment"
+              android:name="com.riluq.seafood.detail.DetailFragment"
+              android:label="Meal Detail"
+              tools:layout="@layout/fragment_detail">
+        <argument
+                android:name="selectedSeafood"
+                app:argType="com.riluq.seafood.network.Seafood"/>
+        <argument android:name="scanResult" app:argType="string"/>
+        <action android:id="@+id/action_detailFragment_to_overviewFragment" app:destination="@id/overviewFragment"
+                app:popUpToInclusive="true" app:popUpTo="@+id/detailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/barcodeScannerFragment" android:name="com.riluq.seafood.barcode.BarcodeScannerFragment"
+              android:label="fragment_barcode_scanner" tools:layout="@layout/fragment_barcode_scanner">
+        <action android:id="@+id/action_barcodeScannerFragment_to_detailFragment" app:destination="@id/detailFragment"
+                app:popUpTo="@+id/barcodeScannerFragment" app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_in_right" app:popEnterAnim="@anim/slide_in_right"/>
+    </fragment>
+</navigation>

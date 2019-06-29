@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Seafood</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="instructions">Instructions</string>
+    <string name="area">Area</string>
+    <string name="category">Category</string>
+    <string name="youtube">YouTube</string>
+    <string name="source">Source</string>
+    <string name="name">Name</string>
+
+    <string name="camera_permission_rationale_title">Camera permission required</string>
+    <string name="camera_permission_rationale_message">In order to take a picture, you must grant this permission
+    </string>
+    <string name="camera_permission_denied_message">Camera permission is required in order to take a photo with the
+        camera
+    </string>
+</resources>
