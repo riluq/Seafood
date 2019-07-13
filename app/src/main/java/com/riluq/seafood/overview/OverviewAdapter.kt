@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.riluq.seafood.databinding.SeafoodListItemBinding
 import com.riluq.seafood.network.Seafood
 
-class OverviewAdapter(private val onClickListener: OnClickListener) : ListAdapter<Seafood, OverviewAdapter.SeafoodViewHolder>(DiffCallback) {
+class OverviewAdapter(private val onClickListener: OnClickListener) :
+        ListAdapter<Seafood, OverviewAdapter.SeafoodViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeafoodViewHolder {
-        return SeafoodViewHolder(SeafoodListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return SeafoodViewHolder(SeafoodListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: SeafoodViewHolder, position: Int) {
